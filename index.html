@@ -22,7 +22,7 @@
     <link rel="alternative" href="/atom.xml" title="小涵的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/images/favicon.jpg">
+    <link rel="icon" href="/images/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -42,7 +42,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(&#39;/images/left_header.png&#39;) no-repeat 0% 20%/ cover;"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -95,7 +95,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(&#39;/images/left_header.png&#39;) no-repeat 0% 20%/ cover;"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -363,7 +363,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="指针的含义"><a href="#指针的含义" class="headerlink" title="指针的含义"></a>指针的含义</h1><h1 id="指针的声明与初始化"><a href="#指针的声明与初始化" class="headerlink" title="指针的声明与初始化"></a>指针的声明与初始化</h1><h1 id="常规声明与new声明"><a href="#常规声明与new声明" class="headerlink" title="常规声明与new声明"></a>常规声明与new声明</h1><h1 id="内存回收"><a href="#内存回收" class="headerlink" title="内存回收"></a>内存回收</h1>
+        <h1 id="指针的含义"><a href="#指针的含义" class="headerlink" title="指针的含义"></a>指针的含义</h1><h2 id="变量与地址"><a href="#变量与地址" class="headerlink" title="变量与地址"></a>变量与地址</h2><p>C++变量存储分为两个步骤，首先申请相对大小的内存，然后对该内存进行赋值。比如<code>int num;</code>，首先申请8个字节的内存，然后进行<code>num=1;</code>，对num进行赋值操作。这两步可以同时进行<code>int num=8;</code>，声明变量、申请内存和赋值一步到位。但是从上一讲中可以得知，这种方法是自动存储，内存在编译阶段申请，无法修改内存地址。但是在OOP编程中我们更倾向于动态存储，可以动态的更换变量的地址，动态的调整内存大小，这个时候我们就需要直接获取到内存的地址。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;<span class="built_in">num</span>，取地址符，获取到<span class="built_in">num</span>内存地址</span><br></pre></td></tr></table></figure>
+<p>获取到一个内存地址之后，我们可以修改变量所指向的内存，赋给一个新的内存地址，这样就可以动态修改内存大小。</p>
+<h2 id="指针的引用"><a href="#指针的引用" class="headerlink" title="指针的引用"></a>指针的引用</h2><p>通过<code>&amp;</code>取到内存地址后，使用指针进行地址引用，<code>*</code>关键字就是用来解析地址的。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">1</span>; <span class="comment"># 申请8字节内存</span></span><br><span class="line"><span class="keyword">int</span> *p; <span class="comment"># 申请一个指针</span></span><br><span class="line">p = &amp;num; <span class="comment"># 通过取地址符获取地址，赋值给p</span></span><br><span class="line">std::cout &lt;&lt; *p; <span class="comment"># 通过*解析到该内存地址的具体值</span></span><br></pre></td></tr></table></figure>
+<p>所以指针其实就是在内存地址前面加了一个<code>*</code>，这个符号可以获取到该地址所代表的具体值。在C++中，指针的声明后并不申请内存（实际会申请2字节的地址，但这里可以忽略），指针本身是不占内存的，指针的作用，就指向另一个已经存在的内存地址。所以指针的声明有如下两种方式：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方式一</span></span><br><span class="line"><span class="built_in">int</span> <span class="built_in">num</span> = <span class="number">1</span>; # 先申请一个整型内存</span><br><span class="line"><span class="built_in">int</span>* p = &amp;<span class="built_in">num</span>; # 将<span class="built_in">num</span>的地址给p，*p就可以获取到<span class="built_in">num</span>的值</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方式二</span></span><br><span class="line"><span class="built_in">int</span>* p; # 创建一个指针</span><br><span class="line">p = <span class="keyword">new</span> <span class="built_in">int</span>; # 通过<span class="keyword">new</span>动态申请一个新的整型内存地址</span><br></pre></td></tr></table></figure>
+<p><strong>切记，因为指针本身是不指向任何内存地址的，所以在没有为指针分配内存地址之前，不可以对其进行赋值操作，不然会发生内存错误，十分危险的行为！</strong></p>
+<hr>
+<h1 id="指针的声明与初始化"><a href="#指针的声明与初始化" class="headerlink" title="指针的声明与初始化"></a>指针的声明与初始化</h1><h1 id="常规声明与new声明"><a href="#常规声明与new声明" class="headerlink" title="常规声明与new声明"></a>常规声明与new声明</h1><h1 id="内存回收"><a href="#内存回收" class="headerlink" title="内存回收"></a>内存回收</h1>
       
 
       
