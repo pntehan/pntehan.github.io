@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/pntehan">
-  <title>Archives: 2021/4 | 小涵的博客</title>
+  <title>C++学习笔记（二）：C++变量存储方法 | 小涵的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个喜欢写web，擅长爬虫和数据分析的计算机视觉工程师...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小涵的博客">
-<meta property="og:url" content="https://github.com/pntehan/archives/2021/04/index.html">
+  <meta name="description" content="C++变量内存存储C++作为底层的高效语言，最大的特色就是深入字节级的内存操作，通过指针的运行，把控计算机的内存使用率，提高程序的运行速率和节省空间使用率。而为了达成这样的效果，C++并不是自动回收内存的，而是开发者自己回收内存的，所以经常发生stackoverflow的错误，为了避免这种错误，我们首先要明白C++的变量在内存中是如何存储的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++学习笔记（二）：C++变量存储方法">
+<meta property="og:url" content="https://github.com/pntehan/2021/04/22/983cda146de8/index.html">
 <meta property="og:site_name" content="小涵的博客">
-<meta property="og:description" content="一个喜欢写web，擅长爬虫和数据分析的计算机视觉工程师...">
+<meta property="og:description" content="C++变量内存存储C++作为底层的高效语言，最大的特色就是深入字节级的内存操作，通过指针的运行，把控计算机的内存使用率，提高程序的运行速率和节省空间使用率。而为了达成这样的效果，C++并不是自动回收内存的，而是开发者自己回收内存的，所以经常发生stackoverflow的错误，为了避免这种错误，我们首先要明白C++的变量在内存中是如何存储的。">
 <meta property="og:locale">
+<meta property="og:image" content="https://github.com/images/stack.png">
+<meta property="og:image" content="https://github.com/images/memory.png">
+<meta property="article:published_time" content="2021-04-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-23T02:15:11.382Z">
 <meta property="article:author" content="pntehan">
-<meta property="article:tag" content="CV,Web,数据分析,机器学习,图像处理,深度学习,C++,java,python,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/images/stack.png">
   
     <link rel="alternative" href="/atom.xml" title="小涵的博客" type="application/atom+xml">
   
@@ -155,146 +160,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-C++学习笔记/C++学习笔记（二）：C++变量存储方法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/22/27019c53c321/" class="archive-article-date">
-  	<time datetime="2021-04-22T04:00:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/22/27019c53c321/">hexo文章url设置</a>
+    <h1 class="article-title" itemprop="name">
+      C++学习笔记（二）：C++变量存储方法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客//" class="article-tag-list-link color5">个人博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/22/fad05a7d510c/" class="archive-article-date">
-  	<time datetime="2021-04-22T03:02:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/22/fad05a7d510c/">C#调用tensorflow的C++代码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">C#</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程记录//" class="article-tag-list-link color5">编程记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/22/37a971948321/" class="archive-article-date">
+        
+        <a href="/2021/04/22/983cda146de8/" class="archive-article-date">
   	<time datetime="2021-04-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/22/37a971948321/">C++学习笔记（三）：C++指针</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="C-变量内存存储"><a href="#C-变量内存存储" class="headerlink" title="C++变量内存存储"></a>C++变量内存存储</h1><p>C++作为底层的高效语言，最大的特色就是深入字节级的内存操作，通过指针的运行，把控计算机的内存使用率，提高程序的运行速率和节省空间使用率。<br>而为了达成这样的效果，C++并不是自动回收内存的，而是开发者自己回收内存的，所以经常发生stackoverflow的错误，为了避免这种错误，我们首先要明白C++的变量在内存中是如何存储的。</p>
+<span id="more"></span>
+<h2 id="C-的两个阶段"><a href="#C-的两个阶段" class="headerlink" title="C++的两个阶段"></a>C++的两个阶段</h2><p>C++分为两个阶段<strong>编译阶段</strong>、<strong>运行阶段</strong>，首先是编译阶段，将C++代码编译成机器码，而后是运行阶段在内存上运行机器码。</p>
+<p>而变量内存的分配存储也是可以在这两个阶段进行的。在编译阶段进行内存分配，变量会提前分配好内存，这种分配一般都是固定大小，后续不能更改，在编译的适合就已经申请了内存位置。另外一种是运行阶段进行内存分配，这种分配是动态的，编译的时候不会申请内存，等机器码运行的时候，再确定变量的内存大小，这两种方法各有利弊。在C++的OOP编程思维里面，推荐使用的还是后者。</p>
+<hr>
+<h1 id="变量存储方法"><a href="#变量存储方法" class="headerlink" title="变量存储方法"></a>变量存储方法</h1><h2 id="自动存储"><a href="#自动存储" class="headerlink" title="自动存储"></a>自动存储</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="attribute">float</span> b = <span class="number">0</span>.<span class="number">5</span>;</span><br><span class="line"><span class="attribute">char</span> f;</span><br><span class="line"><span class="attribute">f</span> = <span class="string">&#x27;w&#x27;</span>;</span><br><span class="line"><span class="attribute">typename</span> name;</span><br></pre></td></tr></table></figure>
+<p>自动存储是最常见的变量存储方法，它的优点是不需要我们去担心内存回收的问题。<strong>因为自动存储的变量生命周期只在当前的代码块，也就是当前的花括号里面。一旦这部分代码块运行结束，该花括号里面声明的变量都会自动回收。</strong></p>
+<p>这种变量存储声明的方法就是最常见的方法，直接声明定义。自动存储的变量内存都会分配到栈上，分配阶段就是编译阶段的时候就已经分配好了，到执行到该代码块的时候，变量会依次依次进入栈内存，结束是再依次释放，遵守<code>先进后出</code>原则。所以在实际程序运行的时候，栈会不断增大和缩小。<br><img src="/images/stack.png" alt="栈演示"></p>
+<h2 id="静态存储"><a href="#静态存储" class="headerlink" title="静态存储"></a>静态存储</h2><p>静态存储本质上和自动存储是一样的，是存储在数据段上的变量，唯一的区别就是静态存储有着更长的生命周期，一般存在于整个程序运行过程中，所以静态存储一般都是全局变量，或者是类似于<code>static int a = 5;</code>，用特定的关键词声明的变量。</p>
+<h2 id="动态存储"><a href="#动态存储" class="headerlink" title="动态存储"></a>动态存储</h2><p>这种存储是C++中最难也是最重要的存储方式，动态存储的变量存储在堆上，而不是栈上，堆和栈的含义我们后续再讨论。动态存储的样例如下:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>* p = <span class="keyword">new</span> <span class="built_in">int</span>; <span class="meta"># 定义一个整型指针</span></span><br><span class="line"><span class="built_in">char</span>* <span class="built_in">string</span> = <span class="keyword">new</span> <span class="built_in">char</span>[]; <span class="meta"># 定义一个字符数组指针</span></span><br><span class="line"><span class="built_in">float</span> a = <span class="number">3.14</span>;</span><br><span class="line"><span class="built_in">float</span> *b = &amp;a;</span><br></pre></td></tr></table></figure>
+<p>这里我们知道其实动态存储就是指针变量，C++中的指针变量用法上和C语言保持一致。指针获取的是变量的地址，而不是变量本身，所以指针的内存申请是在运行阶段发生的，C++提供的<code>new</code>关键词允许我们获取一个内存地址，对于数组变量而言，我们获取的是第一个元素的内存地址，我们在声明的时候不指定大小（当然也可以指定大小），我们在程序运行的时候只需要动态的在后面继续申请内存就好了，这样实现了动态数组的功能。</p>
+<p>如下，我们有一百个商品，商品中名字最长的是50个字符，如果是自动存储的话，我们最少需要申请50x100个字符内存，但是商品中大部分的名称不超过10，那么我们就浪费了大量的内存。而动态存储很好解决了问题，我们不用申请固定大小的内存，而是根据数组的大小动态申请内存。如下：</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>* b; <span class="comment"># 动态存储变量，未申请大小</span></span><br><span class="line"><span class="keyword">char</span>[<span class="number">5</span>] <span class="keyword">a</span> = <span class="string">&quot;bear&quot;</span>; <span class="comment"># 需要存储的字符数组</span></span><br><span class="line">b = <span class="built_in">new</span> <span class="keyword">char</span>[strlen(<span class="keyword">a</span>) + <span class="number">1</span>]; <span class="comment"># 动态申请到a大小的内存</span></span><br><span class="line">strcpy(b, <span class="keyword">a</span>); <span class="comment"># 将a的值赋值给b</span></span><br><span class="line"><span class="built_in">delete</span> [] b; <span class="comment"># 释放b的内存</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span>[<span class="number">20</span>] c = <span class="string">&quot;It is a good day!&quot;</span>; <span class="comment"># 需要存储的字符数组</span></span><br><span class="line">b = <span class="built_in">new</span> <span class="keyword">char</span>[strlen(c) + <span class="number">1</span>]; <span class="comment"># 动态再次申请到c大小的内存</span></span><br><span class="line">strcpy(b, c); <span class="comment"># 将c的值赋值给b</span></span><br><span class="line"><span class="built_in">delete</span> [] b; <span class="comment"># 释放b的内存</span></span><br></pre></td></tr></table></figure>
+<p>上述案例展示了动态存储变量对内存申请的灵活与自由，但是因为动态变量让我们手动自由地申请内存，我们也需要手动地释放内存。我们发现每一个<code>new</code>用来申请内存，每一个<code>delete</code>用来释放内存。<code>new</code>和<code>delete</code>是成对出现的，一定要记住释放内存，不然C++不会自动释放堆上的内存，而且因为动态内存的开放特性，使用时一定注意不要内存溢出或者泄露，这个我们下一讲再说。<strong>这里强调，动态存储变量的生命周期一定是通过<code>new</code>生成，<code>delete</code>结束，甚至可以在一个函数生成它，另一个函数杀死他，所以我们一定要谨慎把控它。</strong></p>
+<hr>
+<p>最后借鉴网络上的图片，看一看C++对于内存使用的情况。<br><img src="/images/memory.png" alt="内存"></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢支持！！！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -306,7 +237,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -319,115 +250,127 @@
 	</div>
 
 
+      <span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/pntehan/2021/04/22/983cda146de8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/22/983cda146de8/" class="archive-article-date">
-  	<time datetime="2021-04-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-22</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/04/22/37a971948321/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          C++学习笔记（三）：C++指针
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/04/21/218963575717/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++学习笔记（一）：初识C++</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/22/983cda146de8/">C++学习笔记（二）：C++变量存储方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-%E5%8F%98%E9%87%8F%E5%86%85%E5%AD%98%E5%AD%98%E5%82%A8"><span class="toc-number">1.</span> <span class="toc-text">C++变量内存存储</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C-%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-number">1.1.</span> <span class="toc-text">C++的两个阶段</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%AD%98%E5%82%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">变量存储方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%AD%98%E5%82%A8"><span class="toc-number">2.1.</span> <span class="toc-text">自动存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%AD%98%E5%82%A8"><span class="toc-number">2.2.</span> <span class="toc-text">静态存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8"><span class="toc-number">2.3.</span> <span class="toc-text">动态存储</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/21/218963575717/" class="archive-article-date">
-  	<time datetime="2021-04-21T06:59:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/21/218963575717/">C++学习笔记（一）：初识C++</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -451,8 +394,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
